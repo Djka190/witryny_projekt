@@ -11,7 +11,7 @@ body{
     position: relative;
 }
 body,html{
-    overflow-x:hidden ;
+    overflow-x: hidden;
 }
 .whitespace{
     height: 110px;
@@ -54,7 +54,7 @@ p{
     color: white;
     text-decoration: none;
     font-size: clamp(1.3rem,2.4vw,2.1rem);
-    font-family: "lalezar";
+    font-family: "lalezar",sans-serif;
     font-weight: 100;
     position: relative;
     box-sizing: border-box;
@@ -149,21 +149,7 @@ p{
     background-color: white;
     height: 1px;
 }
-@media (max-width: 850px){
-    .baner{
-        justify-content: center;
-    }
-    .nawigacja-linki > a, .nawigacja-linki > .konto-przycisk{
-        display: none;
-    }
-    .nawigacja-linki{
-        justify-content: right;
-        padding-right: 15px;
-    }
-    .hamburger-przycisk{
-        display: flex;
-    }
-}
+
 /* hero section */
 .zaloguj-link{
     justify-content: center;
@@ -257,7 +243,7 @@ p{
     transform: rotate(-25deg);
 }
 .pasek-wyszukiwania{
-    width: 62%;
+    width: 65%;
     height: 105px;
     margin: 0 auto 0;
     background-color: white;
@@ -295,10 +281,57 @@ p{
     line-height: 160%;
     font-size: 1.3rem;
     color: var(--szary);
-    border-right: 5px solid var(--jasnoszary) ;
+    border-right: 5px solid var(--jasnoszary);
 }
 #obszarZawodowySelect,#wojewodztwoSelect{
     color: blueviolet;
+    position: relative;
+}
+.obszar-zawodowy-group{
+    width: 370px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #b2b2b2;
+    border-radius: 20px;
+    position: absolute;
+    top: 90px;
+    overflow-y: scroll;
+    color: #000000;
+    display: none;
+}
+.obszar-zawodowy-wybor{
+    box-sizing: border-box;
+    padding: 3px;
+}
+.obszar-zawodowy-wybor:hover{
+    padding: 5px;
+    background-color: #d1d1d1;
+}
+.wybrany-obszar,.wybrane-wojewodztwo{
+    color: black;
+}
+.wojewodztwo-group{
+    width: 370px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #b2b2b2;
+    border-radius: 20px;
+    position: absolute;
+    top: 90px;
+    overflow-y: scroll;
+    color: #000000;
+    display: none;
+}
+.wojewodzctwo-wybor{
+    box-sizing: border-box;
+    padding: 3px;
+}
+.wojewodzctwo-wybor:hover{
+    padding: 5px;
+    background-color: #d1d1d1;
+}
+.obszar-pokaz{
+    display: block;
 }
 .szukanie-przycisk-div{
     width: 30%;
@@ -335,20 +368,21 @@ p{
     padding: 0 0 10px 20px;
 }
 .Pracodawcy-paragraf{
-    font-size: 6rem;
+    font-size: clamp(3.4rem,7vw,6.2rem);
     font-family: "Itim";
 }
 .sekcja-pracodawcy{
-    width: 100%;
+    max-width: 100%;
     height: 300px;
     background-color: #B5ECB6;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    overflow: scroll;
 }
 .pracodawca{
-    width: 370px;
+    min-width: 370px;
     height: 225px;
     background-color: var(--jasnoszary);
     box-sizing: border-box;
@@ -369,7 +403,7 @@ p{
     color: #000000;
 }
 .dowiedz-sie-wiecej{
-    margin-top:10px;
+    margin-top: 10px;
     color: blueviolet;
     font-family: "itim";
     font-size: 1.2rem;
@@ -391,26 +425,27 @@ p{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0 0 10px #316631;
 }
 .oferty-pracy-header{
     width: 100%;
     height: 60px;
     font-family: 'Trebuchet MS', sans-serif;
-    font-size: 3rem;
+    font-size: clamp(2rem,3vw,3rem);
     text-align: center;
 }
 .oferty-pracy{
     width: 100%;
-    min-height: 850px;
+    min-height: 830px;
     display: grid;
     box-sizing: border-box;
     padding: 20px;
-    gap: 25px;
-    grid-template-columns: repeat(3,1fr); 
-    place-items: end;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fit,minmax(430px,1fr)); 
+    place-items: center;
 }
 .oferta-pracy{
-    width: 95%;
+    width: 90%;
     height: 200px;
     background-color: #C3E4C1;
     box-shadow: -12px 0px 0 0px #A4D4A1;
@@ -418,14 +453,14 @@ p{
     display: flex;
     cursor: pointer;
 }
-.image-podsekcja{
+.obraz-podsekcja{
     width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.image-podsekcja img{
+.obraz-podsekcja img{
     width: 120px;
     height: 120px;
 }
@@ -458,6 +493,37 @@ p{
     align-items: center;
     font-size: 1.7rem;
     font-family: "itim";
+}
+
+
+
+
+@media (max-width: 850px){
+    .baner{
+        justify-content: center;
+    }
+    .nawigacja-linki > a, .nawigacja-linki > .konto-przycisk{
+        display: none;
+    }
+    .nawigacja-linki{
+        justify-content: right;
+        padding-right: 15px;
+    }
+    .hamburger-przycisk{
+        display: flex;
+    }
+    .pracodawca{
+        min-width: 300px;
+    }
+    .oferty-pracy{
+        padding: 10px;
+        grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); 
+        row-gap: 10px;
+    }
+    .obraz-podsekcja img{
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .pracodawcy {
