@@ -32,18 +32,21 @@ document.body.addEventListener("click", (ev) =>{
         rozszerzana_sekcja.classList.toggle("filtrowanie--otworzone");
         if (punkt == 2)
         {
-            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 100) + "px";
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
+            
             punkt -= 1
             kierunek = "dol";
         }
         else if (kierunek == "gora")
         {
-            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 100) + "px";
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 400) + "px";
+            
             punkt += 1
         }
         else if (kierunek == "dol")
             {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 100) + "px";
+                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
+                
                 punkt -= 1
             }
         if (punkt == 0)
@@ -56,18 +59,18 @@ document.body.addEventListener("click", (ev) =>{
         rozszerzana_sekcja_druga.classList.toggle("filtrowanie--otworzone-drugie");
         if (punkt == 2)
             {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 100) + "px";
+                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
                 punkt -= 1
                 kierunek = "dol";
             }
             else if (kierunek == "gora")
             {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 100) + "px";
+                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 200) + "px";
                 punkt += 1
             }
             else if (kierunek == "dol")
             {
-               filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 100) + "px";
+               filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
                 punkt -= 1
             }
             if (punkt == 0)
@@ -81,9 +84,24 @@ document.body.addEventListener("click", (ev) =>{
 });
 
 console.log(filtrowanie);
+// tutaj tworzy oferte
+function Konstruktor_oferty1(temat, firma, data, lokalizacja, branza, url_zdjecia)
+{
+    this.temat = temat
+    this.firma = firma
+    this.data = data
+    this.lokalizacja = lokalizacja
+    this.branza = branza
+    this.url_zdjecia = url_zdjecia
+}
+
+const oferta1 = new Konstruktor_oferty1("lol", "ez", "2020-02-01", "Będzin", "IT", "praca3.png")
+const oferta2 = new Konstruktor_oferty1("lol2", "ez", "2020-02-01", "Będzin", "IT", "praca3.png")
+const oferta3 = new Konstruktor_oferty1("lol3", "ez", "2020-02-01", "Będzin", "IT", "praca3.png")
+const oferty = [oferta1, oferta2, oferta3]
 
 document.addEventListener("DOMContentLoaded", function() {
-    const dane = Array.from({length: 419}, (_, i) =>
+    const dane = Array.from({length: 3}, (_, i) =>
         `Item ${i + 1}`);
     const ilosc_ofert_na_strone = 10;
     let aktualna_strona = 1;
@@ -95,7 +113,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const start = (strona - 1) * ilosc_ofert_na_strone;
         const oferty_na_stronie = dane.slice(start, start + ilosc_ofert_na_strone);
 
-        oferty_na_stronie.forEach(item => {
+        oferty_na_stronie.forEach((item, index) => {
+            
+            const oferta = oferty[index]
+            
             const li = document.createElement("li");
             const div = document.createElement("div");
             const img = document.createElement("img");
@@ -104,20 +125,26 @@ document.addEventListener("DOMContentLoaded", function() {
             const h5 = document.createElement("h5");
             const p_data_i_miejsce = document.createElement("p");
             const p_branza = document.createElement("p");
-            p_data_i_miejsce.textContent = "Data dodania oferty:       Miejsce pracy: ";
-            p_branza.textContent = "Branża: "
-            h5.textContent = "Firma";
-            h2.textContent = "Tutaj oferta, głowny jej temat";
-            div2.classList.add("opis-oferty");
-            div2.appendChild(h2);
-            div2.appendChild(h5);
-            div2.appendChild(p_data_i_miejsce);
-            div2.appendChild(p_branza);
-            div.classList.add("zdjecie-oferty");
-            div.appendChild(img);
-            li.appendChild(div);
-            li.appendChild(div2);
-            lista_ofert.appendChild(li);
+            
+            
+            
+                p_data_i_miejsce.textContent = `Data dodania oferty: ${oferta.data}      Miejsce pracy: ${oferta.lokalizacja}`;
+                p_branza.textContent = `Branża: ${oferta.branza}`
+                h5.textContent = oferta.firma;
+                h2.textContent = oferta.temat;
+                img.src = oferta.url_zdjecia;
+                div2.classList.add("opis-oferty");
+                div2.appendChild(h2);
+                div2.appendChild(h5);
+                div2.appendChild(p_data_i_miejsce);
+                div2.appendChild(p_branza);
+                div.classList.add("zdjecie-oferty");
+                div.appendChild(img);
+                li.appendChild(div);
+                li.appendChild(div2);
+                lista_ofert.appendChild(li);
+            
+            
         });
     }
 
@@ -256,4 +283,50 @@ wojewodzctwoSelect.addEventListener('click',function(){
 wojewodztwoGroup.addEventListener('click',function(e){
     let wybraneWoj = e.target.textContent;
     wybraneWojewodztwo.textContent = wybraneWoj
+})
+
+function Konstruktor_oferty(wyangrodzenie, nazwa, lokalizacja, opis, branza, dojazd, pracodawca, oferta, obowiazki, oczekiwania, kontakt_nazwisko, kontakt_mail, kontakt_numer_tel, zdjecie)
+{
+    let h1 = document.createElement("h1")
+    h1.textContent = `${nazwa} -od ${wyangrodzenie}- ${lokalizacja}`
+    let h6 = document.createElement("h6")
+    h6.textContent = pracodawca
+    let h2_pracodawca = document.createElement("h2")
+    h2_pracodawca.textContent = pracodawca
+    let p_opis = document.createElement("p")
+    p_opis.textContent = opis
+    let h2_branza = document.createElement("h2")
+    h2_branza.textContent = branza
+    let h2_lokalizacja = document.createElement("h2")
+    h2_lokalizacja.textContent = lokalizacja
+    let h2_dojazd = document.createElement("h2")
+    h2_dojazd.textContent = dojazd
+    let ul_oferta = document.createElement("ul")
+    let oferta_punkty = oferta.split(" ")
+    for (let i = 0; i < oferta_punkty.length; i++)
+    {
+        ul_oferta.appendChild(oferta_punkty[i])
+    }
+    let wynagrodzenie = document.createElement("li")
+    wynagrodzenie.textContent = `Wynagrodzenie ${wyangrodzenie} brutto`
+    ul_oferta.appendChild(wyangrodzenie)
+    let ul_obowiazki = document.createElement("ul")
+    let obowiazki_punkty = obowiazki.split(" ")
+    for (let i = 0; i < obowiazki_punkty.length; i++)
+    {
+        ul_obowiazki.appendChild(obowiazki_punkty[i])
+    }
+    let ul_oczekiwania = document.createElement("ul")
+    let oczekiwania_punkty = oferta.split(" ")
+    for (let i = 0; i < oczekiwania_punkty.length; i++)
+    {
+        ul_oczekiwania.appendChild(oczekiwania_punkty[i])
+    }
+
+}
+
+document.body.addEventListener("click", (el) => {
+    let kliknieta_oferta = el.target.closest("li")
+
+    console.log(kliknieta_oferta)
 })
