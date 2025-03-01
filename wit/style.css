@@ -1,6 +1,6 @@
 :root{
-    --lightgreen:#CCE9CE;
-    --green:#508D4E;
+    --lightgreen:#e2f0e4;
+    --green:#118B50;
     --lime:#53AB54;
     --szary:#BFBFBF;
     --jasnoszary:#E8E8E8;
@@ -11,7 +11,7 @@ body{
     position: relative;
 }
 body,html{
-    overflow-x: hidden;
+    overflow-x:hidden ;
 }
 .whitespace{
     height: 110px;
@@ -54,7 +54,7 @@ p{
     color: white;
     text-decoration: none;
     font-size: clamp(1.3rem,2.4vw,2.1rem);
-    font-family: "lalezar",sans-serif;
+    font-family: "lalezar";
     font-weight: 100;
     position: relative;
     box-sizing: border-box;
@@ -113,7 +113,7 @@ p{
     display: none;
 }
 .mobilne-menu{
-    position: absolute;
+    position: fixed;
     width: 300px;
     height: 400px;
     background-color: rgb(46, 133, 46);
@@ -149,7 +149,6 @@ p{
     background-color: white;
     height: 1px;
 }
-
 /* hero section */
 .zaloguj-link{
     justify-content: center;
@@ -243,7 +242,7 @@ p{
     transform: rotate(-25deg);
 }
 .pasek-wyszukiwania{
-    width: 65%;
+    width: 62%;
     height: 105px;
     margin: 0 auto 0;
     background-color: white;
@@ -281,57 +280,10 @@ p{
     line-height: 160%;
     font-size: 1.3rem;
     color: var(--szary);
-    border-right: 5px solid var(--jasnoszary);
+    border-right: 5px solid var(--jasnoszary) ;
 }
 #obszarZawodowySelect,#wojewodztwoSelect{
     color: blueviolet;
-    position: relative;
-}
-.obszar-zawodowy-group{
-    width: 370px;
-    height: 250px;
-    background-color: white;
-    border: 1px solid #b2b2b2;
-    border-radius: 20px;
-    position: absolute;
-    top: 90px;
-    overflow-y: scroll;
-    color: #000000;
-    display: none;
-}
-.obszar-zawodowy-wybor{
-    box-sizing: border-box;
-    padding: 3px;
-}
-.obszar-zawodowy-wybor:hover{
-    padding: 5px;
-    background-color: #d1d1d1;
-}
-.wybrany-obszar,.wybrane-wojewodztwo{
-    color: black;
-}
-.wojewodztwo-group{
-    width: 370px;
-    height: 250px;
-    background-color: white;
-    border: 1px solid #b2b2b2;
-    border-radius: 20px;
-    position: absolute;
-    top: 90px;
-    overflow-y: scroll;
-    color: #000000;
-    display: none;
-}
-.wojewodzctwo-wybor{
-    box-sizing: border-box;
-    padding: 3px;
-}
-.wojewodzctwo-wybor:hover{
-    padding: 5px;
-    background-color: #d1d1d1;
-}
-.obszar-pokaz{
-    display: block;
 }
 .szukanie-przycisk-div{
     width: 30%;
@@ -357,7 +309,6 @@ p{
 .lupa-svg{
     padding-left: 5px;
 }
-/* pracodawcy nagłówek */
 .pracodawcy-nagłowek{
     width: 100%;
     height: 310px;
@@ -381,13 +332,7 @@ p{
     gap: 30px;
     overflow: scroll;
 }
-.pracodawca{
-    min-width: 370px;
-    height: 225px;
-    background-color: var(--jasnoszary);
-    box-sizing: border-box;
-    padding: 10px;
-}
+
 .obraz-pracodawcy{
     width: 142px;
     height: 80px;
@@ -497,33 +442,177 @@ p{
 
 
 
+/*pracodawcy*/
 
-@media (max-width: 850px){
-    .baner{
-        justify-content: center;
-    }
-    .nawigacja-linki > a, .nawigacja-linki > .konto-przycisk{
-        display: none;
-    }
-    .nawigacja-linki{
-        justify-content: right;
-        padding-right: 15px;
-    }
-    .hamburger-przycisk{
-        display: flex;
-    }
-    .pracodawca{
-        min-width: 300px;
-    }
-    .oferty-pracy{
-        padding: 10px;
-        grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); 
-        row-gap: 10px;
-    }
-    .obraz-podsekcja img{
-        width: 100px;
-        height: 100px;
-    }
+#centrum{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#input{
+    width: 45%;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(146, 146, 146);
+    outline: none;
+    font-size: clamp(1rem,2vw,1.8rem);
+}
+.pracodawcy-main{
+    width: 85%;
+    min-height: 1000px;
+    background-color: #F7FFF4;
+    box-shadow: 0 0 15px #285B00;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pracodawcy-header{
+    margin: 20px 0;
+    width: 100%;
+    height: 60px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: clamp(2rem,4vw,4rem);
+    text-align: center;
+}
+
+.pracodawca-sekcja{
+    width: 100%;
+    min-height: 1050px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 25px;
+    place-items: start;
+    justify-content: center
+}
+
+.pracodawca{
+    width: 25%;
+    height: 250px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.pracodawca-image-podsekcja{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pracodawca-image-podsekcja > img{
+    height: 150px;
+
+}
+
+.pracodawca-tekst-podsekcja{
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 150%;
+    font-size: 1.6rem;
+    color: #5f5f5f;
+}
+
+.wiecej-pracodawcow{
+    width: 300px;
+    height: 80px;
+    margin: 10px auto 0;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background-color: #00C687;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: "itim";
+}
+
+
+/* oferty pracy */
+
+
+.obszar-zawodowy{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 160%;
+    font-size: 1.3rem;
+    color: var(--szary);
+    border-right: 5px solid var(--jasnoszary);
+}
+#obszarZawodowySelect,#wojewodztwoSelect{
+    color: blueviolet;
+    position: relative;
+}
+.obszar-zawodowy-group{
+    width: 370px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #b2b2b2;
+    border-radius: 20px;
+    position: absolute;
+    top: 90px;
+    overflow-y: scroll;
+    color: #000000;
+    display: none;
+}
+.obszar-zawodowy-wybor{
+    box-sizing: border-box;
+    padding: 3px;
+}
+.obszar-zawodowy-wybor:hover{
+    padding: 5px;
+    background-color: #d1d1d1;
+}
+.wybrany-obszar,.wybrane-wojewodztwo{
+    color: black;
+}
+
+.wojewodztwo-group{
+    width: 370px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #b2b2b2;
+    border-radius: 20px;
+    position: absolute;
+    top: 90px;
+    overflow-y: scroll;
+    color: #000000;
+    display: none;
+}
+.wojewodzctwo-wybor{
+    box-sizing: border-box;
+    padding: 3px;
+}
+.wojewodzctwo-wybor:hover{
+    padding: 5px;
+    background-color: #d1d1d1;
+}
+.obszar-pokaz{
+    display: block;
 }
 
 .pracodawcy {
@@ -757,6 +846,21 @@ p{
     background-color: #F7FFF4;
     border-bottom: 1px solid #D7D7D7;
     display: flex;
+    flex-direction: row;
+}
+
+#lista-ofert-reczne li {
+    width: 100%;
+    height: 185px;
+    background-color: black;
+    margin-bottom: 25px;
+    background-color: #F7FFF4;
+    border-bottom: 1px solid #D7D7D7;
+    display: flex;   
+}
+
+ul > a{
+    text-decoration: none;
 }
 
 ul {
@@ -764,7 +868,7 @@ ul {
 }
 
 .zdjecie-oferty {
-    width: 185px;
+    width: 184px;
     height: 142px;
     background-color: #AFAFAF;
     margin-left: 10px;
@@ -824,11 +928,12 @@ ul {
 }
 
 .paginacja-kontener {
-    width: 75%;
+    width: 100%;
     height: 70px;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
+
 }
 
 .aktywny {
@@ -863,3 +968,117 @@ ul {
     height: 50px;
 }
 
+.ogloszenie{
+    width: 100%;
+    height: 1800px;
+    display: flex;
+    flex-direction: row;
+}
+
+.opis-ogloszenia{
+    width: 40%;
+    min-height: 1800px;
+    background-color: #DFE7E0;
+    box-shadow: 0 0 15px #285B00;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: calc(20% - 20px);
+}
+
+.informacje-ogłoszenie{
+    width: 20%;
+    min-height: 1800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: calc(20% - 20px);;
+}
+
+.ogloszenie-pracodawca, .odpowiedzialny-za-ogloszenie, .zostaw-numer{
+    width: 100%;
+    background-color: #DFE7E0;
+    box-shadow: 0 0 15px #285B00;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.ogloszenie-pracodawca{
+    height: 375px;
+    margin-top: 0px;
+}
+
+.odpowiedzialny-za-ogloszenie{
+    height: 275px;
+}
+
+.zostaw-numer{
+    height: 275px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
+.powrot-nastepne{
+    height: 2%;
+    color: #285B00;
+    font-family: "Afacad", sans-serif;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.powrot-nastepne > p{
+    width: 50%;
+}
+
+.tlo-ogloszenie{
+    background-image: url(ogloszenie-liftmag-nr1-tlo.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    width: 100%;
+    height: 28%;
+    margin-top: 0px;
+}
+
+.tekst.ogloszenie > div{
+    left: 40px;
+}
+
+
+@media (max-width: 850px){
+    .baner{
+        justify-content: center;
+    }
+    .nawigacja-linki > a, .nawigacja-linki > .konto-przycisk{
+        display: none;
+    }
+    .nawigacja-linki{
+        justify-content: right;
+        padding-right: 15px;
+    }
+    .hamburger-przycisk{
+        display: flex;
+    }
+    .pracodawca{
+        min-width: 300px;
+    }
+    .oferty-pracy{
+        padding: 10px;
+        grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); 
+        row-gap: 10px;
+    }
+    .obraz-podsekcja img{
+        width: 100px;
+        height: 100px;
+    }
+    #input{
+        width: 80%;
+    }
+    .pracodawca{
+        width:23%;
+    }
+}
