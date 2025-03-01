@@ -8,9 +8,7 @@ let wojewodztwoGroup = document.querySelector('.wojewodztwo-group');
 let wybranyObszarZawodowy = document.querySelector('.wybrany-obszar');
 let wybraneWojewodztwo = document.querySelector('.wybrane-wojewodztwo');
 
-function pokazMenu(){
-    menuMobilne.classList.toggle('menu-pokaz')
-};
+
 
 let punkt = 0;
 let kierunek = "gora";
@@ -258,8 +256,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function pokazMenu(){
-    console.log('worken')
-    console.log(menuMobilne)
     menuMobilne.classList.toggle('menu-pokaz')
 };
 
