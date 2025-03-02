@@ -1,0 +1,1088 @@
+:root{
+    --lightgreen:#e2f0e4;
+    --green:#118B50;
+    --lime:#53AB54;
+    --szary:#BFBFBF;
+    --jasnoszary:#E8E8E8;
+}
+body{
+    margin: 0;
+    background-color: var(--lightgreen);
+    position: relative;
+}
+body,html{
+    overflow-x:hidden ;
+}
+.whitespace{
+    height: 110px;
+    width: 100%;  
+}
+p{
+    margin: 0;
+}
+/* nawigacja */
+.baner{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 110px;
+    background-color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px rgb(97, 97, 97);
+    box-sizing: border-box;
+    z-index: 100;
+}
+.nazwa-strony{
+    flex: 6 3 250px;
+    height: 100%;
+    font-size: clamp(3.2rem,4.8vw,5.2rem);
+    color: white;
+    font-family: "Itim";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nawigacja-linki{
+    flex: 10 4 500px;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nawigacja-linki > a{
+    color: white;
+    text-decoration: none;
+    font-size: clamp(1.3rem,2.4vw,2.1rem);
+    font-family: "lalezar";
+    font-weight: 100;
+    position: relative;
+    box-sizing: border-box;
+}
+.nawigacja-linki > a::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background-color: white;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.7s;
+}
+.nawigacja-linki a:hover::before{
+    width: 100%;
+}
+.konto-przycisk{
+    width: 175px;
+    height: 40px;
+    background-color: #96cc97;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.6rem;
+    font-family: "itim";
+    font-weight: 500;
+    position: relative;
+}
+.menu-konto{
+    width: 300px;
+    height: 0px;
+    background-color: var(--jasnoszary);
+    border-radius: 30px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    transition: height 0.4s;
+}
+.hamburger-przycisk{
+    width: 50px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--lime);
+    border: none;
+}
+.hamburger-svg-x{
+    display: none;
+}
+.mobilne-menu{
+    position: fixed;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(46, 133, 46);
+    color: white;
+    font-family: "itim";
+    top: 83px;
+    right: 0;
+    transform: translateX(100%);
+    z-index: 101;
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-sizing: border-box;
+    padding: 10px;
+    transition: transform 0.4s;
+}
+.menu-pokaz{
+    transform: translateX(0%);
+}
+.mobilne-menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-family: "itim";
+    font-weight: 500;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.mobilne-menu hr{
+    width: 95%;
+    border: 1px solid white;
+    background-color: white;
+    height: 1px;
+}
+/* hero section */
+.zaloguj-link{
+    justify-content: center;
+    align-items: center;
+    font-family: "itim";
+    width: 60%;
+    height: 42px;
+    background-color: #508D4E;
+    border-radius: 40px;
+    display: none;
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+.Zarejestruj-link{
+    justify-content: center;
+    align-items: center;
+    font-family: "itim";
+    width: 60%;
+    height: 50px;
+    background-color: #80AF81;
+    border-radius: 40px;
+    display: none;
+    text-decoration: none;
+    color: white;
+}
+.zaloguj-tekst{
+    display: none;
+    font-size: 1.33rem;
+    font-family: "itim";
+    font-weight: 100;
+}
+.konto-przycisk:hover .menu-konto{
+    height: 240px;
+    border: 3px solid var(--lime);
+    .zaloguj-link,.Zarejestruj-link,.zaloguj-tekst{
+        display: flex;
+    }
+}
+.hero-section{
+    height: 550px;
+    width: 100%;
+    display: flex;
+}
+.glowny-tekst{
+    width: 50%;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #3f3f3f;
+    font-size: clamp(3.8rem,5vw,5.6rem);
+    line-height: 130%;
+    font-family: "Itim";
+}
+.obrazy{
+    width: 50%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+.obraz1{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 340px;
+    height: 200px;
+}
+.obraz2{
+    position: absolute;
+    top: 290px;
+    left: 40px;
+    width: 350px;
+    height: 220px;
+}
+.obraz3{
+    position: absolute;
+    top: 130px;
+    left: 430px;
+    width: 330px;
+    height: 180px;
+}
+.circle{
+    width: 75%;
+    height: 60%;
+    left: -20px;
+    position: absolute;
+    border-radius: 100%;
+    border: 90px solid var(--lime);
+    transform: rotate(-25deg);
+}
+.pasek-wyszukiwania{
+    width: 70%;
+    height: 105px;
+    margin: 0 auto 0;
+    background-color: white;
+    position: relative;
+    top: -22px;
+    border-radius: 13px;
+    box-shadow: 0 0 5px #5f5f5f;
+    display: flex;
+    font-family: "itim";
+}
+.szukane-stanowisko{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border-right: 5px solid var(--jasnoszary) ;
+}
+.szukanie-pracy-input{
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: "itim";
+    color: black;
+    width: 90%;
+}
+.obszar-zawodowy{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 160%;
+    font-size: 1.3rem;
+    color: var(--szary);
+    border-right: 5px solid var(--jasnoszary) ;
+}
+#obszarZawodowySelect,#wojewodztwoSelect{
+    color: blueviolet;
+}
+.szukanie-przycisk-div{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.szukanie-pracy-przycisk{
+    width: 290px;
+    height: 70px;
+    background-color: #00C687;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.7rem;
+    font-family: "itim";
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lupa-svg{
+    padding-left: 5px;
+}
+.pracodawcy-nagłowek{
+    width: 100%;
+    height: 310px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding: 0 0 10px 20px;
+}
+.Pracodawcy-paragraf{
+    font-size: clamp(3.4rem,7vw,6.2rem);
+    font-family: "Itim";
+}
+.sekcja-pracodawcy{
+    max-width: 100%;
+    height: 300px;
+    background-color: #B5ECB6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    overflow: scroll;
+}
+
+.obraz-pracodawcy{
+    width: 142px;
+    height: 80px;
+}
+.pracodawcy-hr{
+    width: 80%;
+    background-color: var(--szary);
+    margin: 5px 0;
+}
+.nazwa-pracodawcy{
+    font-size: 1.9rem;
+    font-family: "Itim";
+    color: #000000;
+}
+.dowiedz-sie-wiecej{
+    margin-top: 10px;
+    color: blueviolet;
+    font-family: "itim";
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.seperator-hr{
+    margin: 35px auto;
+    background-color: #405c40;
+    width: 95%;
+    height: 4px;
+    border: none;
+}
+/* oferty pracy */
+.oferty-pracy-main{
+    width: 85%;
+    min-height: 1000px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px #316631;
+}
+.oferty-pracy-header{
+    width: 100%;
+    height: 60px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: clamp(2rem,3vw,3rem);
+    text-align: center;
+}
+.oferty-pracy{
+    width: 100%;
+    min-height: 830px;
+    display: grid;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fit,minmax(430px,1fr)); 
+    place-items: center;
+}
+.oferta-pracy{
+    width: 90%;
+    height: 200px;
+    background-color: #C3E4C1;
+    box-shadow: -12px 0px 0 0px #A4D4A1;
+    border-radius: 20px;
+    display: flex;
+    cursor: pointer;
+}
+.obraz-podsekcja{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.obraz-podsekcja img{
+    width: 120px;
+    height: 120px;
+}
+.tekst-podsekcja{
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 150%;
+    font-size: 1.6rem;
+    color: #7c7c7c;
+}
+.stanowisko{
+    font-size: 2rem;
+    color: #000000;
+}
+.sprawdz-nowe-oferty{
+    width: 300px;
+    height: 60px;
+    margin: 10px auto 0;
+    border-radius: 12px;
+    border: none;
+    background-color: #80AF81;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: "itim";
+}
+
+
+
+/*pracodawcy*/
+
+#centrum{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#input{
+    width: 45%;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(146, 146, 146);
+    outline: none;
+    font-size: clamp(1rem,2vw,1.8rem);
+}
+.pracodawcy-main{
+    width: 85%;
+    min-height: 1000px;
+    background-color: #F7FFF4;
+    box-shadow: 0 0 15px #285B00;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pracodawcy-header{
+    margin: 20px 0;
+    width: 100%;
+    height: 60px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: clamp(2rem,4vw,4rem);
+    text-align: center;
+}
+
+.pracodawca-sekcja{
+    width: 100%;
+    min-height: 1050px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 25px;
+    place-items: start;
+    justify-content: center
+}
+
+.pracodawca{
+    width: 25%;
+    height: 250px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.pracodawca-image-podsekcja{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pracodawca-image-podsekcja > img{
+    height: 150px;
+
+}
+
+.pracodawca-tekst-podsekcja{
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 150%;
+    font-size: 1.6rem;
+    color: #5f5f5f;
+}
+
+.wiecej-pracodawcow{
+    width: 300px;
+    height: 80px;
+    margin: 10px auto 0;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background-color: #00C687;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: "itim";
+}
+
+
+/* oferty pracy */
+
+
+.obszar-zawodowy{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 160%;
+    font-size: 1.3rem;
+    color: var(--szary);
+    border-right: 5px solid var(--jasnoszary);
+}
+#obszarZawodowySelect,#wojewodztwoSelect{
+    color: blueviolet;
+    position: relative;
+}
+.obszar-zawodowy-group{
+    width: 370px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #b2b2b2;
+    border-radius: 20px;
+    position: absolute;
+    top: 90px;
+    overflow-y: scroll;
+    color: #000000;
+    display: none;
+}
+.obszar-zawodowy-wybor{
+    box-sizing: border-box;
+    padding-left: 3px;
+    background-color: var(--jasnoszary);
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+.obszar-zawodowy-wybor:hover{
+    padding-left: 8px;
+    background-color: #cfcfcf;
+}
+.wybrany-obszar,.wybrane-wojewodztwo{
+    color: black;
+}
+
+.wojewodztwo-group{
+    width: 370px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #b2b2b2;
+    border-radius: 20px;
+    position: absolute;
+    top: 90px;
+    overflow-y: scroll;
+    color: #000000;
+    display: none;
+}
+.wojewodzctwo-wybor{
+    box-sizing: border-box;
+    padding-left: 3px;
+    background-color: var(--jasnoszary);
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+.wojewodzctwo-wybor:hover{
+    padding-left: 8px;
+    background-color: #cfcfcf;
+}
+.obszar-pokaz{
+    display: block;
+}
+
+.pracodawcy {
+    display: flex;
+    width: 100%;
+    height: 1350px;
+    justify-content: center;
+    align-items: center;
+}
+
+.wspolpracowadcy {
+    width: 85%;
+    height: 1154px;
+    background-color:#F7FFF4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px #285B00;
+}
+
+.wspolpracodawcy-naglowek {
+    font-family: "Itim";
+    font-size: 90px;
+    margin-top: 0;
+}
+
+.przycisk-szukaj {
+    width: 149px;
+    height: 63px;
+    background-color: #00C687;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.7rem;
+    font-family: "itim";
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wyszukaj-pracodawce input {
+    width: 674px;
+    height: 67px;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-family: "Itim";
+    font-size: 25px;
+}
+
+.wyszukaj-pracodawce {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wyszukaj-pracodawce input::placeholder {
+    font-family: "itim";
+    padding-left: 100px;
+    font-size: 25px;
+}
+
+.wspolpracodawca {
+    width: 80%;
+    height: 262px;
+    background-color: #D9D9D9;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pracodawcy-div {
+    width: 100%;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 60px;
+}
+
+.zdjecie-pracodawcy {
+    width: 185px;
+    height: 142px;
+    margin-top: 10px;
+}
+
+.wspolpracodawca p {
+    font-family: "itim";
+    color: #FFFFFF;
+    font-size: 26px;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+.wiecej-przycisk {
+    width: 387px;
+    height: 89px;
+    background-color: #00C687;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.7rem;
+    font-family: "itim";
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.oferty {
+    width: 100%;
+    height: 2250px;
+    display: flex;
+    justify-content: center;
+}
+
+.filtruj {
+    width: 435px;
+    height: 278px;
+    background-color: #F7FFF4;
+    box-shadow: 0px 0px 10px #285B00;
+    margin-right: 30px;
+    margin-top: 25px;
+    transition: 0.3s ease-out;
+}
+
+.oferty-dla-ciebie {
+    width: 1039px;
+    height: 2175px;
+    background-color: #F7FFF4;
+    box-shadow: 0px 0px 10px #285B00;
+    margin-top: 25px;
+}
+
+.filtruj h1 {
+    font-family: 'Lalezar';
+    font-size: 26px;
+    font-weight: 400;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.filtruj p {
+    font-size: 26px;
+    color: #00460B;
+    font-weight: 400;
+    font-family: 'Lalezar';
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.zastosuj {
+    width: 281px;
+    height: 58px;
+    background-color: #00C687;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 26px;
+    font-family: "Lalezar";
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    
+}
+
+.przycisk-zastosuj {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.filtrowanie {
+    max-height: 120px;
+    font-family: "Lalezar";
+    font-size: 17px;
+}
+
+.filtrowanie-drugie {
+    max-height: 120px;
+    font-family: "Lalezar";
+    font-size: 17px;
+}
+
+.filtrowanie-rozszerzenie-kontent {
+    margin-left: 25px;
+    overflow: hidden;
+}
+
+.filtrowanie-rozszerzenie {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+}
+
+.filtrowanie-rozszerzenie-drugie {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+}
+
+.filtrowanie--otworzone .filtrowanie-rozszerzenie{
+    grid-template-rows: 1fr;
+}
+
+.filtrowanie--otworzone-drugie .filtrowanie-rozszerzenie-drugie {
+    grid-template-rows: 1fr;
+}
+
+.oferty-dla-ciebie h1 {
+    font-family: "Lalezar";
+    font-weight: 400;
+    font-size: 26px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#lista-ofert li {
+    width: 100%;
+    height: 185px;
+    background-color: black;
+    margin-bottom: 25px;
+    background-color: #F7FFF4;
+    border-bottom: 1px solid #D7D7D7;
+    display: flex;
+    flex-direction: row;
+}
+
+#lista-ofert-reczne li {
+    width: 100%;
+    height: 185px;
+    background-color: black;
+    margin-bottom: 25px;
+    background-color: #F7FFF4;
+    border-bottom: 1px solid #D7D7D7;
+    display: flex;   
+}
+
+ul > a{
+    text-decoration: none;
+}
+
+ul {
+    padding: 0px;
+}
+
+.zdjecie-oferty {
+    width: 252px;
+    height: 142px;
+    background-color: #AFAFAF;
+    margin-left: 10px;
+}
+
+.zdjecie-oferty img {
+    width: 100%;
+    height: 100%;
+}
+
+.opis-oferty {
+    width: 80%;
+    height: 142px;
+    font-family: 'Nunito';
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.opis-oferty h2 {
+    color: #00460B;
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.opis-oferty h5 {
+    font-size: 20px;
+    color: #707070;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.opis-oferty p {
+    font-size: 13px;
+    color: #878787;
+    font-weight: 400;
+    margin: 0px;
+}
+
+#paginacja-pasek {
+    display: flex;
+    list-style-type: none;
+}
+
+#paginacja-pasek li {
+    width: 50px;
+    height: 50px;
+    background-color: #F7FFF4;
+    font-family: "Nunito";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin: 5px;
+}
+
+.paginacja-kontener {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.aktywny {
+    width: 56px !important;
+    height: 56px !important;
+    background-color: #D2D2D2 !important;
+    font-size: 36px !important;
+}
+
+.strzalka_lewo {
+    width: 50px;
+    height: 50px;
+    background-color: #F7FFF4;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.strzalka_lewo img {
+    width: 50px;
+    height: 50px;
+}
+
+.strzalka_prawo {
+    width: 50px;
+    height: 50px;
+    background-color: #F7FFF4;
+    margin-left: 50px;
+}
+
+.strzalka_prawo img {
+    width: 50px;
+    height: 50px;
+}
+
+.ogloszenie{
+    width: 100%;
+    height: 1800px;
+    display: flex;
+    flex-direction: row;
+}
+
+.opis-ogloszenia{
+    width: 40%;
+    min-height: 1800px;
+    background-color: #DFE7E0;
+    box-shadow: 0 0 15px #285B00;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: calc(20% - 20px);
+}
+
+.informacje-ogłoszenie{
+    width: 20%;
+    min-height: 1800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: calc(20% - 20px);;
+}
+
+.ogloszenie-pracodawca, .odpowiedzialny-za-ogloszenie, .zostaw-numer{
+    width: 100%;
+    background-color: #DFE7E0;
+    box-shadow: 0 0 15px #285B00;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.ogloszenie-pracodawca{
+    height: 375px;
+    margin-top: 0px;
+}
+
+.odpowiedzialny-za-ogloszenie{
+    height: 275px;
+}
+
+.zostaw-numer{
+    height: 275px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
+.powrot-nastepne{
+    height: 2%;
+    color: #285B00;
+    font-family: "Afacad", sans-serif;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.powrot-nastepne > p{
+    width: 50%;
+}
+
+.tlo-ogloszenie{
+    background-image: url(ogloszenie-liftmag-nr1-tlo.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    width: 100%;
+    height: 28%;
+    margin-top: 0px;
+}
+
+.tekst.ogloszenie > div{
+    left: 40px;
+}
+
+
+@media (max-width: 850px){
+    .baner{
+        justify-content: center;
+    }
+    .nawigacja-linki > a, .nawigacja-linki > .konto-przycisk{
+        display: none;
+    }
+    .nawigacja-linki{
+        justify-content: right;
+        padding-right: 15px;
+    }
+    .hamburger-przycisk{
+        display: flex;
+    }
+    .pracodawca{
+        min-width: 300px;
+    }
+    .oferty-pracy{
+        padding: 10px;
+        grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); 
+        row-gap: 10px;
+    }
+    .obraz-podsekcja img{
+        width: 100px;
+        height: 100px;
+    }
+    #input{
+        width: 80%;
+    }
+    .pracodawca{
+        width:23%;
+    }
+}

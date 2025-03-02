@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malpa.pl</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Lalezar&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mobilne-menu">
+        <a href="wspolpracodawcy.html">Wspołpracodawcy</a>
+        <hr>
+        <a href="ofertypracy.html">Oferty pracy</a>
+        <hr>
+        <a href="">kontakt</a>
+        <hr>
+        <a href="">Zaloguj się</a>
+        <hr>
+        <a href="">Zarejestruj się</a>
+    </div>
+    <section class="whitespace"></section>
+    <section class="baner">
+        <header class="nazwa-strony">Małpa<p style="color: #00C687">.</p>pl</header>
+        <nav class="nawigacja-linki">
+            <a href="wspolpracodawcy.html">Wspołpracodawcy</a>
+            <a href="ofertypracy.html">Oferty pracy</a>
+            <a href="">kontakt</a>
+            <button class="konto-przycisk">Moje konto ▼
+                <div class="menu-konto">
+                    <p class="zaloguj-tekst">Zaloguj się i zdobądź dostęp do wszystkich funkcji</p>
+                    <a href="" class="zaloguj-link">Zaloguj się</a>
+                    <p class="zaloguj-tekst">Nie posiadzasz konta?</p>
+                    <a href="" class="Zarejestruj-link">Zarejestruj się</a>
+                </div>
+            </button>
+            <button class="hamburger-przycisk" onclick="pokazMenu()">
+                <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="hamburger-svg-linia">
+                    <line x1="10" y1="20" x2="90" y2="20" stroke="white" stroke-width="13"/>
+                    <line x1="10" y1="50" x2="90" y2="50" stroke="white" stroke-width="13"/>
+                    <line x1="10" y1="80" x2="90" y2="80" stroke="white" stroke-width="13"/>
+                </svg>
+                <svg width="50" height="50" viewbox = "0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="hamburger-svg-x">
+                    <line x1="10" y1="10" x2="90" y2="90" stroke="white" stroke-width="14"/>
+                    <line x1="10" y1="90" x2="90" y2="10" stroke="white" stroke-width="14"/>
+                </svg>
+            </button>
+        </nav>
+    </section>
+    <section class="hero-section">
+        <section class="glowny-tekst">
+            <p>ZNAJDŹ IDEALNĄ</p>
+            <p>PRACĘ</p>
+            <p style="color:var(--green);">JUŻ TERAZ!</p>
+        </section>
+        <section class="obrazy">
+            <div class="circle"></div>
+            <img src="praca1.png" alt="osoba pracujaca na komputerze" class="obraz1">
+            <img src="praca2.png" alt="osoba pracujaca na magazynie" class="obraz2">
+            <img src="praca3.png" alt="osoba pracujaca w barze" class="obraz3">
+        </section>
+    </section>
+    <section class="pasek-wyszukiwania">
+        <div class="szukane-stanowisko">
+            <form action="">
+                <input type="text" class="szukanie-pracy-input" placeholder="Wpisz szukane stanowisko"></input>
+            </form>
+        </div>
+        <div class="obszar-zawodowy">
+            <p>Obszar zawodowy</p>
+            <p id="obszarZawodowySelect">wybierz <sup>v</sup> <p class="wybrany-obszar"></p>
+                <section class="obszar-zawodowy-group">
+                <div class="obszar-zawodowy-wybor">IT i technologie</div>
+                <div class="obszar-zawodowy-wybor">Finanse i ekonomia</div>
+                <div class="obszar-zawodowy-wybor">Marketing i sprzedaż</div>
+                <div class="obszar-zawodowy-wybor">Produkcja i przemysł</div>
+                <div class="obszar-zawodowy-wybor">Prawo i administracja</div>
+                <div class="obszar-zawodowy-wybor">Turystyka i gastronomia</div>
+                <div class="obszar-zawodowy-wybor">Marketing i sprzedaż</div>
+                <div class="obszar-zawodowy-wybor">Sztuka i media</div>
+                <div class="obszar-zawodowy-wybor">Turystyka i gastronomia</div>
+                </section>
+            </p>
+        </div>
+        <div class="obszar-zawodowy">
+            <p>Województwo</p>
+            <p id="wojewodztwoSelect">wybierz <sup>v</sup><p class="wybrane-wojewodztwo"></p> 
+                <section class="wojewodztwo-group">
+                    <div class="wojewodzctwo-wybor">Dolnośląskie</div>
+                    <div class="wojewodzctwo-wybor">Kujawsko-Pomorskie</div>
+                    <div class="wojewodzctwo-wybor">Lubelskie</div>
+                    <div class="wojewodzctwo-wybor">Lubuskie</div>
+                    <div class="wojewodzctwo-wybor">Łódzkie</div>
+                    <div class="wojewodzctwo-wybor">Małopolskie</div>
+                    <div class="wojewodzctwo-wybor">Mazowieckie</div>
+                    <div class="wojewodzctwo-wybor">Opolskie</div>
+                    <div class="wojewodzctwo-wybor">Podkarpackie</div>
+                    <div class="wojewodzctwo-wybor">Podlaskie</div>
+                    <div class="wojewodzctwo-wybor">Pomorskie</div>
+                    <div class="wojewodzctwo-wybor">Śląskie</div>
+                    <div class="wojewodzctwo-wybor">Świętokrzyskie</div>
+                    <div class="wojewodzctwo-wybor">Warmińsko-Mazurskie</div>
+                    <div class="wojewodzctwo-wybor">Wielkopolskie</div>
+                    <div class="wojewodzctwo-wybor">Zachodniopomorskie</div>
+
+                </section>
+            </p>
+        </div>
+        <div class="szukanie-przycisk-div">
+            <button class="szukanie-pracy-przycisk">Znajdź pracę 
+                <svg width="35" height="35" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="lupa-svg">
+                    <circle cx="40" cy="40" r="25" stroke="white" stroke-width="8" fill="none"/>
+                    <ellipse cx="45" cy="32" rx="12" ry="7" fill="white" transform="rotate(40, 45, 32)" /> 
+                    <line x1="30" y1="65" x2="20" y2="90" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+    <header class="pracodawcy-nagłowek">
+        <p class="Pracodawcy-paragraf">Pracodawcy</p>
+        <a href="" style="text-decoration: none;">Więcej...</a>
+    </header>
+    <section class="sekcja-pracodawcy">
+        <div class="pracodawca">
+            <img src="" alt="" class="obraz-pracodawcy">
+            <hr class="pracodawcy-hr">
+            <p class="nazwa-pracodawcy">Nazwa pracodawcy</p>
+            <a href="" class="dowiedz-sie-wiecej">Dowiedz sie wiecej</a>
+        </div>
+        <div class="pracodawca">
+            <img src="" alt="" class="obraz-pracodawcy">
+            <hr class="pracodawcy-hr">
+            <p class="nazwa-pracodawcy">Nazwa pracodawcy</p>
+            <a href="" class="dowiedz-sie-wiecej">Dowiedz sie wiecej</a>
+        </div>
+        <div class="pracodawca">
+            <img src="" alt="" class="obraz-pracodawcy">
+            <hr class="pracodawcy-hr">
+            <p class="nazwa-pracodawcy">Nazwa pracodawcy</p>
+            <a href="" class="dowiedz-sie-wiecej">Dowiedz sie wiecej</a>
+        </div>
+        <div class="pracodawca">
+            <img src="" alt="" class="obraz-pracodawcy">
+            <hr class="pracodawcy-hr">
+            <p class="nazwa-pracodawcy">Nazwa pracodawcy</p>
+            <a href="" class="dowiedz-sie-wiecej">Dowiedz sie wiecej</a>
+        </div>
+        <div class="pracodawca">
+            <img src="" alt="" class="obraz-pracodawcy">
+            <hr class="pracodawcy-hr">
+            <p class="nazwa-pracodawcy">Nazwa pracodawcy</p>
+            <a href="" class="dowiedz-sie-wiecej">Dowiedz sie wiecej</a>
+        </div>
+    </section>
+    <hr class="seperator-hr">
+       <main class="oferty-pracy-main">
+           <header class="oferty-pracy-header">NOWE OFERTY PRACY</header>
+           <section class="oferty-pracy">
+               <div class="oferta-pracy">
+                  <div class="image-podsekcja"><img src="" alt=""></div>
+                  <div class="tekst-podsekcja">
+                    <p class="stanowisko">Stanowisko</p>
+                    <p>firma</p>
+                    <p>lokalizacja</p>
+                  </div>
+               </div>
+               <div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div><div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div><div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div><div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div><div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div><div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div><div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div><div class="oferta-pracy">
+                <div class="image-podsekcja"><img src="" alt=""></div>
+                <div class="tekst-podsekcja">
+                  <p class="stanowisko">Stanowisko</p>
+                  <p>firma</p>
+                  <p>lokalizacja</p>
+                </div>
+             </div>
+             
+           </section>
+           <button class="sprawdz-nowe-oferty">Sprawdź nowe oferty</button>
+       </main>
+
+    <hr class="seperator-hr">
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <p>© 2025 Małpa.pl - OGŁOSZENIA O PRACY DLA KAŻDEGO |</p>
+    
+    <script src="app.js"></script>
+</body>
+</html>
