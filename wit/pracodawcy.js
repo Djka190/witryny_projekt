@@ -3,7 +3,11 @@ let ofertyPracySection = document.querySelector(".pracodawca-sekcja")
 let pracodawcyForm = document.querySelector("#centrum")
 let pracodawcyInput = document.querySelector("#input")
 let pracodawcyInputValue
+let menuMobilne = document.querySelector(".mobilne-menu")
 
+function pokazMenu(){
+    menuMobilne.classList.toggle('menu-pokaz')
+};
 pracodawcyForm.addEventListener('keyup',function(e){
     e.preventDefault()
     pracodawcyInputValue = pracodawcyInput.value

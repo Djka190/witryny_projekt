@@ -594,7 +594,40 @@ p{
 
 
 /* oferty pracy */
-
+.oferty-pracy-form{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.oferty-pracy-input{
+    width: 700px;
+    height: 50px;
+    border: 3px solid var(--green);
+    border-radius: 0 12px;
+    font-size: 1.6rem;
+    text-indent: 6px;
+    outline: none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.oferty-pracy-button{
+    width: 200px;
+    height: 56px;
+    margin-left: 10px;
+    border: 3px solid white;
+    background-color: #00C687;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.7rem;
+    font-family: "itim";
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .obszar-zawodowy{
     width: 20%;
     height: 100%;
@@ -914,8 +947,8 @@ ul > a{
 }
 
 .zdjecie-oferty {
-    width: 184px;
-    height: 142px;
+    width: 272px;
+    height: 153px;
     background-color: #AFAFAF;
     margin-left: 10px;
 }
@@ -1323,6 +1356,11 @@ ul > a{
     .szukanie-pracy-input{
         width: 95%;
     }
+    .filtruj{
+        position: fixed;
+        left: -100%;
+        display: none;
+    }
 }
 @media (max-width: 1400px) and (min-width:850px){
     .pasek-wyszukiwania{
@@ -1348,6 +1386,26 @@ ul > a{
     }
     .obszar-zawodowy{
         border-top: 2px solid lightgray;
+    }
+}
+
+@media (max-width:1050px){
+    .oferty{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .oferty-pracy-oferty{
+        width: 90%;
+    }
+    .oferty-dla-ciebie{
+        width: 100%;
+    }
+    #lista-ofert-reczne li{
+        width: 70%;
+    }
+    h1{
+        width: 300px;
     }
 }
 @media (max-width: 850px){
@@ -1422,5 +1480,36 @@ ul > a{
     }
     .szukanie-pracy-przycisk{
         width: 250px;
+    }
+    #lista-ofert{
+        padding-left: 5px;
+    }
+    .opis-oferty{
+        padding-left: 10px;
+    }
+    .zdjecie-oferty{
+        width: 120px;
+        height: 80px;
+    }
+    .paginacja-kontener{
+        transform: scale(0.7);
+    }
+    .oferty-pracy-input{
+        width: 60%;
+        font-size: 1.3rem;
+    }
+    .oferty-pracy-button{
+        width: 33%;
+        margin-left: 0px;
+    }
+    
+    .kontakt-sekcja{
+        /* margin: 20px auto; */
+        width: 90%;
+    }
+}
+@media (max-width: 550px){
+    .margin-dla-sekcji{
+        padding: 10px 0 0 10px ;
     }
 }
