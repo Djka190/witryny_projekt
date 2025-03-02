@@ -30,6 +30,11 @@ body,html{
 p{
     margin: 0;
 }
+
+.oferty-dla-ciebie a {
+    text-decoration: none;
+    display: flex;
+}
 /* nawigacja */
 .baner{
     position: fixed;
