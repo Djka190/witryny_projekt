@@ -12,9 +12,6 @@ function pokazMenu(){
     menuMobilne.classList.toggle('menu-pokaz')
 };
 
-let punkt = 0;
-let kierunek = "gora";
-
 document.body.addEventListener("click", (ev) =>{
     const czy_klikniento_naglowek = !!ev.target.closest(".filtrowanie-naglowek");
     const czy_klikniento_naglowek_drugi = !!ev.target.closest(".filtrowanie-naglowek-drugi");
@@ -26,62 +23,28 @@ document.body.addEventListener("click", (ev) =>{
     {
         return;
     }
-    else if (czy_klikniento_naglowek && rozszerzana_sekcja)
-    {
-        
+    
+    if (czy_klikniento_naglowek && rozszerzana_sekcja) {
         rozszerzana_sekcja.classList.toggle("filtrowanie--otworzone");
-        if (punkt == 2)
-        {
-            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
-            
-            punkt -= 1
-            kierunek = "dol";
-        }
-        else if (kierunek == "gora")
-        {
+    
+        if (rozszerzana_sekcja.classList.contains("filtrowanie--otworzone")) {
             filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 400) + "px";
-            
-            punkt += 1
+        } else {
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
         }
-        else if (kierunek == "dol")
-            {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
-                
-                punkt -= 1
-            }
-        if (punkt == 0)
-        {
-            kierunek = "gora";
-        }
-    }
-    else if (czy_klikniento_naglowek_drugi && rozszerzana_sekcja_druga)
-    {
-        rozszerzana_sekcja_druga.classList.toggle("filtrowanie--otworzone-drugie");
-        if (punkt == 2)
-            {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
-                punkt -= 1
-                kierunek = "dol";
-            }
-            else if (kierunek == "gora")
-            {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 200) + "px";
-                punkt += 1
-            }
-            else if (kierunek == "dol")
-            {
-               filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
-                punkt -= 1
-            }
-            if (punkt == 0)
-            {
-                kierunek = "gora";
-            }
     }
     
-
-    console.log(rozszerzana_sekcja_druga, punkt, kierunek);
+    if (czy_klikniento_naglowek_drugi && rozszerzana_sekcja_druga) {
+        rozszerzana_sekcja_druga.classList.toggle("filtrowanie--otworzone-drugie");
+    
+        if (rozszerzana_sekcja_druga.classList.contains("filtrowanie--otworzone-drugie")) {
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 200) + "px";
+        } else {
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
+        }
+    }
 });
+
 
 console.log(filtrowanie);
 // tutaj tworzy oferte
@@ -95,7 +58,7 @@ function Konstruktor_oferty1(temat, firma, data, lokalizacja, branza, url_zdjeci
     this.url_zdjecia = url_zdjecia
 }
 
-const oferta1 = new Konstruktor_oferty1("lol", "ez", "2020-02-01", "Będzin", "IT", "praca3.png")
+const oferta1 = new Konstruktor_oferty1("Magazynier z UDT", "LiftMag", "01.03.2025", "Rzeszów", "Magazynowa", "LiftMag.png")
 const oferta2 = new Konstruktor_oferty1("lol2", "ez", "2020-02-01", "Będzin", "IT", "praca3.png")
 const oferta3 = new Konstruktor_oferty1("lol3", "ez", "2020-02-01", "Będzin", "IT", "praca3.png")
 const oferty = [oferta1, oferta2, oferta3]
@@ -116,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         oferty_na_stronie.forEach((item, index) => {
             
             const oferta = oferty[index]
-            
+            const a = document.createElement("a");
             const li = document.createElement("li");
             const div = document.createElement("div");
             const img = document.createElement("img");
@@ -133,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 h5.textContent = oferta.firma;
                 h2.textContent = oferta.temat;
                 img.src = oferta.url_zdjecia;
+                a.href = "ogloszenie-liftmag-nr1.html";
                 div2.classList.add("opis-oferty");
                 div2.appendChild(h2);
                 div2.appendChild(h5);
@@ -140,8 +104,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 div2.appendChild(p_branza);
                 div.classList.add("zdjecie-oferty");
                 div.appendChild(img);
-                li.appendChild(div);
-                li.appendChild(div2);
+                a.appendChild(div);
+                a.appendChild(div2);
+                
+                li.appendChild(a);
                 lista_ofert.appendChild(li);
             
             
