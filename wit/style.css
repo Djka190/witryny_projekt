@@ -242,7 +242,7 @@ p{
     transform: rotate(-25deg);
 }
 .pasek-wyszukiwania{
-    width: 62%;
+    width: 70%;
     height: 105px;
     margin: 0 auto 0;
     background-color: white;
@@ -268,7 +268,7 @@ p{
     font-size: 1.6rem;
     font-family: "itim";
     color: black;
-    width: 290px;
+    width: 90%;
 }
 .obszar-zawodowy{
     width: 20%;
@@ -581,11 +581,13 @@ p{
 }
 .obszar-zawodowy-wybor{
     box-sizing: border-box;
-    padding: 3px;
+    padding-left: 3px;
+    background-color: var(--jasnoszary);
+    border-bottom: 1px solid rgb(206, 206, 206);
 }
 .obszar-zawodowy-wybor:hover{
-    padding: 5px;
-    background-color: #d1d1d1;
+    padding-left: 8px;
+    background-color: #cfcfcf;
 }
 .wybrany-obszar,.wybrane-wojewodztwo{
     color: black;
@@ -605,11 +607,13 @@ p{
 }
 .wojewodzctwo-wybor{
     box-sizing: border-box;
-    padding: 3px;
+    padding-left: 3px;
+    background-color: var(--jasnoszary);
+    border-bottom: 1px solid rgb(206, 206, 206);
 }
 .wojewodzctwo-wybor:hover{
-    padding: 5px;
-    background-color: #d1d1d1;
+    padding-left: 8px;
+    background-color: #cfcfcf;
 }
 .obszar-pokaz{
     display: block;
@@ -868,7 +872,7 @@ ul {
 }
 
 .zdjecie-oferty {
-    width: 184px;
+    width: 252px;
     height: 142px;
     background-color: #AFAFAF;
     margin-left: 10px;
@@ -883,7 +887,7 @@ ul {
     width: 80%;
     height: 142px;
     font-family: 'Nunito';
-    padding-left: 100px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: start;
