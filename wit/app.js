@@ -10,9 +10,6 @@ let wybraneWojewodztwo = document.querySelector('.wybrane-wojewodztwo');
 
 
 
-let punkt = 0;
-let kierunek = "gora";
-
 document.body.addEventListener("click", (ev) =>{
     const czy_klikniento_naglowek = !!ev.target.closest(".filtrowanie-naglowek");
     const czy_klikniento_naglowek_drugi = !!ev.target.closest(".filtrowanie-naglowek-drugi");
@@ -24,61 +21,26 @@ document.body.addEventListener("click", (ev) =>{
     {
         return;
     }
-    else if (czy_klikniento_naglowek && rozszerzana_sekcja)
-    {
-        
+    
+    if (czy_klikniento_naglowek && rozszerzana_sekcja) {
         rozszerzana_sekcja.classList.toggle("filtrowanie--otworzone");
-        if (punkt == 2)
-        {
-            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
-            
-            punkt -= 1
-            kierunek = "dol";
-        }
-        else if (kierunek == "gora")
-        {
+    
+        if (rozszerzana_sekcja.classList.contains("filtrowanie--otworzone")) {
             filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 400) + "px";
-            
-            punkt += 1
+        } else {
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
         }
-        else if (kierunek == "dol")
-            {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
-                
-                punkt -= 1
-            }
-        if (punkt == 0)
-        {
-            kierunek = "gora";
-        }
-    }
-    else if (czy_klikniento_naglowek_drugi && rozszerzana_sekcja_druga)
-    {
-        rozszerzana_sekcja_druga.classList.toggle("filtrowanie--otworzone-drugie");
-        if (punkt == 2)
-            {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
-                punkt -= 1
-                kierunek = "dol";
-            }
-            else if (kierunek == "gora")
-            {
-                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 200) + "px";
-                punkt += 1
-            }
-            else if (kierunek == "dol")
-            {
-               filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
-                punkt -= 1
-            }
-            if (punkt == 0)
-            {
-                kierunek = "gora";
-            }
     }
     
-
-    console.log(rozszerzana_sekcja_druga, punkt, kierunek);
+    if (czy_klikniento_naglowek_drugi && rozszerzana_sekcja_druga) {
+        rozszerzana_sekcja_druga.classList.toggle("filtrowanie--otworzone-drugie");
+    
+        if (rozszerzana_sekcja_druga.classList.contains("filtrowanie--otworzone-drugie")) {
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 200) + "px";
+        } else {
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
+        }
+    }
 });
 
 console.log(filtrowanie);
