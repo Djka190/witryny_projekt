@@ -5,6 +5,15 @@
     --szary:#BFBFBF;
     --jasnoszary:#E8E8E8;
 }
+
+button{
+    cursor: pointer;
+}
+
+#oferty.pasek{
+    margin-top: 50px !important;
+}
+
 body{
     margin: 0;
     background-color: var(--lightgreen);
@@ -14,6 +23,7 @@ body,html{
     overflow-x:hidden ;
 }
 .whitespace{
+
     height: 110px;
     width: 100%;  
 }
@@ -43,6 +53,23 @@ p{
     justify-content: center;
     align-items: center;
 }
+
+.nazwa-strony-a{
+    flex: 6 3 250px;
+    height: 100%;
+    font-size: clamp(3.2rem,4.8vw,5.2rem);
+    color: white;
+    font-family: "Itim";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nazwa-strony-a > p{
+    color: 3, 211, 145 !important;
+}
+
 .nawigacja-linki{
     flex: 10 4 500px;
     height: 100%;
@@ -50,6 +77,7 @@ p{
     justify-content: space-evenly;
     align-items: center;
 }
+
 .nawigacja-linki > a{
     color: white;
     text-decoration: none;
@@ -59,6 +87,7 @@ p{
     position: relative;
     box-sizing: border-box;
 }
+
 .nawigacja-linki > a::before{
     content: "";
     position: absolute;
@@ -70,9 +99,11 @@ p{
     transform: translateX(-50%);
     transition: width 0.7s;
 }
+
 .nawigacja-linki a:hover::before{
     width: 100%;
 }
+
 .konto-przycisk{
     width: 175px;
     height: 40px;
@@ -149,6 +180,7 @@ p{
     background-color: white;
     height: 1px;
 }
+
 /* hero section */
 .zaloguj-link{
     justify-content: center;
@@ -235,11 +267,13 @@ p{
 .circle{
     width: 75%;
     height: 60%;
-    left: -20px;
     position: absolute;
+    left: 50%;
+    top: 50%;
     border-radius: 100%;
     border: 90px solid var(--lime);
-    transform: rotate(-25deg);
+    transform-origin: center;
+    transform: translate(-50%,-50%) rotate(-25deg);
 }
 .pasek-wyszukiwania{
     width: 70%;
@@ -258,14 +292,14 @@ p{
     width: 30%;
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 5px;
     box-sizing: border-box;
     border-right: 5px solid var(--jasnoszary) ;
 }
 .szukanie-pracy-input{
     border: none;
     outline: none;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: "itim";
     color: black;
     width: 90%;
@@ -284,6 +318,7 @@ p{
 }
 #obszarZawodowySelect,#wojewodztwoSelect{
     color: blueviolet;
+    cursor: pointer;
 }
 .szukanie-przycisk-div{
     width: 30%;
@@ -332,7 +367,13 @@ p{
     gap: 30px;
     overflow: scroll;
 }
-
+.pracodawca{
+    min-width: 370px;
+    height: 225px;
+    background-color: var(--jasnoszary);
+    box-sizing: border-box;
+    padding: 10px;
+}
 .obraz-pracodawcy{
     width: 142px;
     height: 80px;
@@ -440,8 +481,6 @@ p{
     font-family: "itim";
 }
 
-
-
 /*pracodawcy*/
 
 #centrum{
@@ -460,6 +499,7 @@ p{
     outline: none;
     font-size: clamp(1rem,2vw,1.8rem);
 }
+
 .pracodawcy-main{
     width: 85%;
     min-height: 1000px;
@@ -550,7 +590,6 @@ p{
 
 /* oferty pracy */
 
-
 .obszar-zawodowy{
     width: 20%;
     height: 100%;
@@ -578,6 +617,7 @@ p{
     overflow-y: scroll;
     color: #000000;
     display: none;
+    z-index: 99;
 }
 .obszar-zawodowy-wybor{
     box-sizing: border-box;
@@ -587,7 +627,7 @@ p{
 }
 .obszar-zawodowy-wybor:hover{
     padding-left: 8px;
-    background-color: #cfcfcf;
+    background-color: #d1d1d1;
 }
 .wybrany-obszar,.wybrane-wojewodztwo{
     color: black;
@@ -604,6 +644,7 @@ p{
     overflow-y: scroll;
     color: #000000;
     display: none;
+    z-index: 99;
 }
 .wojewodzctwo-wybor{
     box-sizing: border-box;
@@ -867,12 +908,8 @@ ul > a{
     text-decoration: none;
 }
 
-ul {
-    padding: 0px;
-}
-
 .zdjecie-oferty {
-    width: 252px;
+    width: 184px;
     height: 142px;
     background-color: #AFAFAF;
     margin-left: 10px;
@@ -887,7 +924,7 @@ ul {
     width: 80%;
     height: 142px;
     font-family: 'Nunito';
-    margin-left: 30px;
+    padding-left: 100px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -972,16 +1009,18 @@ ul {
     height: 50px;
 }
 
+/* ogłoszenie */
+
 .ogloszenie{
     width: 100%;
-    height: 1800px;
+    height: 1400px;
     display: flex;
     flex-direction: row;
 }
 
 .opis-ogloszenia{
     width: 40%;
-    min-height: 1800px;
+    min-height: 1400px;
     background-color: #DFE7E0;
     box-shadow: 0 0 15px #285B00;
     margin: 0 auto;
@@ -994,13 +1033,13 @@ ul {
 
 .informacje-ogłoszenie{
     width: 20%;
-    min-height: 1800px;
+    min-height: 1400px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     margin-top: 50px;
     margin-left: 20px;
-    margin-right: calc(20% - 20px);;
+    margin-right: calc(20% - 20px);
 }
 
 .ogloszenie-pracodawca, .odpowiedzialny-za-ogloszenie, .zostaw-numer{
@@ -1012,22 +1051,31 @@ ul {
 }
 
 .ogloszenie-pracodawca{
-    height: 375px;
+    height: 365px;
     margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .odpowiedzialny-za-ogloszenie{
-    height: 275px;
+    height: 325px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .zostaw-numer{
     height: 275px;
+    display: flex;
+    flex-direction: column;
+    text-align: center
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 
 .powrot-nastepne{
-    height: 2%;
+    height: 4%;
     color: #285B00;
     font-family: "Afacad", sans-serif;
     align-items: center;
@@ -1042,17 +1090,261 @@ ul {
 .tlo-ogloszenie{
     background-image: url(ogloszenie-liftmag-nr1-tlo.png);
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
+    background-position: center;
     width: 100%;
-    height: 28%;
+    height: 36%;
     margin-top: 0px;
 }
 
-.tekst.ogloszenie > div{
-    left: 40px;
+.glupidiv{
+    width: 70%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.jebanydiv > h4{
+    margin: 0px;
+}
+
+.logo-informacje{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.logo-informacje > h2, h4{
+    margin: 0px;
+    color: #000000;
+}
+
+.logo-informacje > img{
+    width: 70%;
+}
+
+.osoba-odpowiedzialna{
+    color: #515151;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.naglowek-odpowiedzialna-osoba{
+    font-size: 28px;
+    color: #515151;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.linia-informacje{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.linia-ikona{
+    width: 25%;
+}
+
+.linia-ikona > img{
+    width: 40%;
+}
+
+.seperator-hr-2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: calc(10%-10px);
+    margin-right: calc(10%-10px);
+    background-color: #515151;
+    width: 80%;
+    height: 1px;
+    border: none;
+}
+
+.wyszukaj-pracodawce{
+    width: 160px;
+    height: 50px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background-color: #00C687;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: "itim";
+}
+
+.naglowek-zostaw-numer{
+    font-size: 26px;
+    font-family: "Afacad", sans-serif;
+    color: #5f5f5f;
+    margin: 10px auto;
+    margin-top: 0px;
+    width: 80%;
+}
+
+.inputy-telefon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.kierunkowy-input{
+    width: 40px;
+    height: 35px;
+    margin: 2.5px;
+    font-size: 18px;
+    text-align: right;
+    background-color: #D7E1D8;
+    border-color: #c0c0c0;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #707070;;
+}
+
+.numer-input{
+    width: 150px;
+    height: 35px;
+    margin: 2.5px;
+    font-size: 16px;
+    background-color: #D7E1D8;
+    border-color: #c0c0c0;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #707070;;
+}
+
+.submit-input > input{
+    width: 250px;
+    height: 50px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background-color: #008b51;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: "itim";
+}
+
+.submit-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kontakt-sekcja{
+    width: 60%;
+    min-height: 1400px;
+    background-color: #F7FFF4;
+    box-shadow: 0 0 10px #285B00;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Lalezar&display=swap');
+
+.header-kontakt{
+    font-size: 96px;
+    font-family: "Lalezar", system-ui;
+    color: #003508;
+}
+
+.margin-dla-sekcji{
+    padding-left: 50px;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.kontakt-dane{
+    font-family: "Lalezar", system-ui;
+    font-size: 20px;
+}
+
+.zakres-dzialalnosci{
+    padding-top: 80px;
+    width: 50%;
+}
+
+.zakres-dzialalnosci > header{
+    color: #969696;
+    font-family: "Lalezar", system-ui;
+}
+
+.zakres-dzialalnosci > ol,li,ul{
+    color: #5E5E5E;
+    font-family: "Lalezar", system-ui;
+}
+
+.zakres-dzialalnosci > ol > ul{
+    list-style-type: disc;
 }
 
 
+
+@media (max-width: 1500px){
+    .obrazy{
+        display: none;
+    }
+    .hero-section{
+        height: 350px;
+    }
+    .glowny-tekst{
+        width: 100%;
+        height: 350px;
+        font-size:  clamp(2.8rem,10vw,5.8rem);
+    }
+    .pasek-wyszukiwania{
+        top: 0;
+    }
+    .szukanie-pracy-przycisk{
+        width: 240px;
+    }
+    .szukanie-pracy-input{
+        width: 95%;
+    }
+}
+@media (max-width: 1400px) and (min-width:850px){
+    .pasek-wyszukiwania{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 210px;
+        width: 800px;
+        margin-top: 20px;
+    }
+    .pasek-wyszukiwania > * {
+        width: 100%;
+        border-right: none;
+    }
+    .szukanie-przycisk-div{
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .obszar-zawodowy-group,.wojewodztwo-group{
+        top: 200px;
+    }
+    .szukane-stanowisko{
+        justify-content: center;
+    }
+    .obszar-zawodowy{
+        border-top: 2px solid lightgray;
+    }
+}
 @media (max-width: 850px){
     .baner{
         justify-content: center;
@@ -1084,5 +1376,46 @@ ul {
     }
     .pracodawca{
         width:23%;
+    }
+    /*  */
+    .pasek-wyszukiwania{
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 380px;
+        width: 90%;
+        margin-top: 20px;
+    }
+    .pasek-wyszukiwania > *{
+        width: 100%;
+    }
+    .obszar-zawodowy{
+        height: 70%;
+    }
+    .obszar-zawodowy-group{
+        top: 150px;
+    }
+    .wojewodztwo-group{
+        top: 250px;
+    }
+    .szukane-stanowisko{
+        justify-content: center;
+        height: 70px;
+    }
+    .szukane-stanowisko{
+        border: 2px solid green;
+        border-radius: 12px 12px 0 0;
+    }
+    .szukanie-form{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .szukanie-pracy-input{
+        width: 100%;
+        height: 32px;
+    }
+    .szukanie-pracy-przycisk{
+        width: 250px;
     }
 }

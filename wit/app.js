@@ -8,7 +8,12 @@ let wojewodztwoGroup = document.querySelector('.wojewodztwo-group');
 let wybranyObszarZawodowy = document.querySelector('.wybrany-obszar');
 let wybraneWojewodztwo = document.querySelector('.wybrane-wojewodztwo');
 
+function pokazMenu(){
+    menuMobilne.classList.toggle('menu-pokaz')
+};
 
+let punkt = 0;
+let kierunek = "gora";
 
 document.body.addEventListener("click", (ev) =>{
     const czy_klikniento_naglowek = !!ev.target.closest(".filtrowanie-naglowek");
@@ -21,26 +26,61 @@ document.body.addEventListener("click", (ev) =>{
     {
         return;
     }
-    
-    if (czy_klikniento_naglowek && rozszerzana_sekcja) {
+    else if (czy_klikniento_naglowek && rozszerzana_sekcja)
+    {
+        
         rozszerzana_sekcja.classList.toggle("filtrowanie--otworzone");
-    
-        if (rozszerzana_sekcja.classList.contains("filtrowanie--otworzone")) {
-            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 400) + "px";
-        } else {
+        if (punkt == 2)
+        {
             filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
+            
+            punkt -= 1
+            kierunek = "dol";
+        }
+        else if (kierunek == "gora")
+        {
+            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 400) + "px";
+            
+            punkt += 1
+        }
+        else if (kierunek == "dol")
+            {
+                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 400) + "px";
+                
+                punkt -= 1
+            }
+        if (punkt == 0)
+        {
+            kierunek = "gora";
         }
     }
-    
-    if (czy_klikniento_naglowek_drugi && rozszerzana_sekcja_druga) {
+    else if (czy_klikniento_naglowek_drugi && rozszerzana_sekcja_druga)
+    {
         rozszerzana_sekcja_druga.classList.toggle("filtrowanie--otworzone-drugie");
-    
-        if (rozszerzana_sekcja_druga.classList.contains("filtrowanie--otworzone-drugie")) {
-            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 200) + "px";
-        } else {
-            filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
-        }
+        if (punkt == 2)
+            {
+                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
+                punkt -= 1
+                kierunek = "dol";
+            }
+            else if (kierunek == "gora")
+            {
+                filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) + 200) + "px";
+                punkt += 1
+            }
+            else if (kierunek == "dol")
+            {
+               filtrowanie.style.height = (parseInt(window.getComputedStyle(filtrowanie).height) - 200) + "px";
+                punkt -= 1
+            }
+            if (punkt == 0)
+            {
+                kierunek = "gora";
+            }
     }
+    
+
+    console.log(rozszerzana_sekcja_druga, punkt, kierunek);
 });
 
 console.log(filtrowanie);
@@ -218,6 +258,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function pokazMenu(){
+    console.log('worken')
+    console.log(menuMobilne)
     menuMobilne.classList.toggle('menu-pokaz')
 };
 
